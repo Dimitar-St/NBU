@@ -21,10 +21,20 @@ bool is_inside_a_traingle(int x1, int y1, int x2, int y2, int x3, int y3, int p1
 	return (A == A1 + A2 + A3);
 }
 
+bool is_inside_a_rectangle(int x1, int y1, int x2, int y2, int x, int y) {
+	
+	if(x > x1 and x < x2 and y > y1 and y < y2) {
+		return true;
+	}	
+
+	return false;
+
+}
+
 int main() {
 
 	string shape = "";
-	bool is_inside = false;
+	string is_inside = "false";
 	int point_a1, 
 	    point_a2,
             point_b1,
@@ -45,7 +55,7 @@ int main() {
 	cin >> point2; 
 
 
-	if (shape == "tri") {
+	if (shape == "triangle") {
 
 		cout << "Point A: " << endl;
 		
@@ -62,10 +72,22 @@ int main() {
 		cin >> point_c1;
 		cin >> point_c2;
 
-		is_inside = is_inside_a_traingle(point_a1, point_a2, point_b1, point_b2, point_c1, point_c2, point1, point2); 
+		is_inside = (is_inside_a_traingle(point_a1, point_a2, point_b1, point_b2, point_c1, point_c2, point1, point2) ? "true" : "false"); 
 	
 	} else {
-	 
+		cout << "We need just the bottom-left anf top-right points." << endl;
+
+	 	cout << "Point A: " << endl;
+		
+		cin >> point_a1;
+		cin >> point_a2;
+
+		cout << "Point C: " << endl;
+		
+		cin >> point_c1;
+		cin >> point_c2;
+
+		is_inside = (is_inside_a_rectangle(point_a1, point_a2, point_c1, point_c2, point1, point2) ? "true" : "false");
 	}
 
 	cout << "Is inside the " << shape << ": " << is_inside << endl;  
