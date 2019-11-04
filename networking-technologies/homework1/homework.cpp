@@ -29,7 +29,7 @@ int main()
 		for(int j = 0; j <= 3; j++)
 		{
 	
-			if(current_text < text[j]) 
+			if(current_text > text[j]) 
 			{	
 				string temp_text = text[i];
 				text[i]  = text[j];
@@ -38,7 +38,7 @@ int main()
 		}
 	}
 
-	cout << "Ascending order: " << endl;
+	cout << "Descending order: " << endl;
 
 	for(int i = 0; i <= 3; i++) 
 	{	
